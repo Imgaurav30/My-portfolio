@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaurav Gupta</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="/images/logotelegram-removebg-preview.png" type="image/x-icon">
+  <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+  <script src="app.js" defer></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script> 
+</head>
+
+<body>
+  <div class="wrapper" onmousemove="moveBackground(event)">
+    <section class="landing-page" >
+      <nav> 
+        <div>
+          <img id="personal-logo" src="./images/logotelegram-removebg-preview.png" alt=""> <!-- nav image -->
+        </div>
+        <ul class="nav-link-list">
+          <li class="nav-link">
+            <a href="#" class=" 
+              nav__link--anchor
+              link__hover-effect
+              link__hover-effect--black
+            ">About</a>
+          </li>
+          <li class="nav-link" onclick="clicked()">
+            <a href="#projects" class="
+              nav__link--anchor
+              link__hover-effect
+              link__hover-effect--black
+            ">Projects</a> 
+          </li>
+          <li class="nav-link">
+            <a href="#skills" class="
+              nav__link--anchor
+              link__hover-effect
+              link__hover-effect--black
+            ">Skills</a> 
+          </li>
+          <li class="nav-link" onclick="toggleModal()">
+            <a href="#" class="
+              nav__link--anchor
+              link__hover-effect
+              link__hover-effect--black
+            ">Contact</a>
+          </li>
+          <li class="nav-link click">
+            <a href="#" class="
+              nav__link--anchor
+              link__hover-effect
+              link__hover-effect--black
+            "><i class="fas fa-adjust" id="dark"></i></a>
+          </li>
+        </ul>
+      </nav>
+      <header class="header">
+        <div class="header__content">
+          <h1 class="title">Hey</h1>
+          <h1 class="title orange">I'm <span class="role"></span></h1>
+          <p class="header__para">
+            I'm a <b class="orange">Frontend Developer</b> with a strong
+            passion for building web applications with great user experiances.
+            <br />
+            Here's a bit more
+            <b class="orange click" onclick="toggleModal()">about me</b>.
+          </p>
+          <div class="social__list">
+            <a
+              href="https://www.linkedin.com/in/gaurav30/"
+              target="_blank"
+              class="social__link click"
+            >
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a
+              href="https://github.com/Imgaurav30"
+              target="_blank"
+              class="social__link click"
+            >
+              <i class="fab fa-github"></i>
+            </a>
+            <a
+              href="./assets/Resume.pdf"
+              target="_blank"
+              class="social__link click"
+              title="Resume" 
+            >
+              <i class="fas fa-file-pdf" ></i>
+            </a>
+          </div>
+        </div>
+      </header>
+      <a href="#landing-page">
+        <button class="mail__btn click">
+          <i class="fas fa-envelope"></i>
+        </button>
+      </a>
+      <a href="#projects" class="scroll">
+        <div class="scroll__icon click" id="godown"></div>
+      </a>
+
+      <!-- Modal section -->
+
+      <div class="modal">
+        <div class="modal_half modal_about">
+          <h3 class="modal_title modal_tital--about">
+            Here's a bit about me.
+          </h3>
+          <h4 class="modal_subtitle modal_subtitle--about">
+            Frontend Web Developer.
+          </h4>
+          <p class="modal_para">
+            I'm a 21 year old
+            <b class="orange"> Frontend Web Developer</b> with a strong
+            passion for developing websites with great
+            <b class="orange">user experiences. </b>
+            <br />
+            I am currently working on
+            <b class="orange">Freelancing Project</b> and i want to learn from
+            a team consisting of some of the most
+            <b class="orange">talented</b> and
+            <b class="orange"> experienced </b> Developer every day.
+          </p>
+          <div class="modal_languages">
+            <figure class="modal_lang">
+              <img
+                class="modal_lang--img"
+                src="./images/stack/HTML.png"
+                alt=""
+              />
+              <span class="lang_name">HTML</span>
+            </figure>
+            <figure class="modal_lang">
+              <img
+                class="modal_lang--img"
+                src="./images/stack/CSS.png"
+                alt=""
+              />
+              <span class="lang_name">CSS</span>
+            </figure>
+            <figure class="modal_lang">
+              <img
+                class="modal_lang--img"
+                src="./images/stack/Javascript.svg"
+                alt=""
+              />
+              <span class="lang_name">JAVASCRIPT</span>
+            </figure>
+            <figure class="modal_lang">
+              <img
+                class="modal_lang--img"
+                src="./images/stack/React.png"
+                alt=""
+              />
+              <span class="lang_name">REACT</span>
+            </figure>
+            <figure class="modal_lang">
+              <img
+                class="modal_lang--img"
+                src="./images/stack/Tailwind.png"
+                alt=""
+              />
+              <span class="lang_name">Tailwind CSS</span>
+            </figure>
+            <figure class="modal_lang">
+              <img
+                class="modal_lang--img"
+                src="./images/stack/Git.svg"
+                alt=""
+              />
+              <span class="lang_name">Git</span>
+            </figure>
+          </div>
+        </div>
+        <div class="modal_half modal_contact">
+          <i
+            class="fas fa-times modal_exit click"
+            onclick="toggleModal()"
+          ></i>
+          <h3 class="modal_title modal_tital--contact">Let's have a chat!</h3>
+          <h4 class="modal_subtitle modal_subtitle--contact">
+            I'm currently open to new opportunities.
+          </h4>
+          <form onsubmit="contact(event)" id="contact_form">
+            <div class="form-item">
+              <label for="name" class="form_item--label">Name</label>
+              <input
+                type="text"
+                class="input"
+                name="user_name"
+                id="name"
+                required
+              />
+            </div>
+            <div class="form-item">
+              <label for="email" class="form_item--label">E-mail</label>
+              <input
+                type="email"
+                class="input"
+                name="user_email"
+                id="email"
+                required
+              />
+            </div>
+            <div class="form-item">
+              <label for="message" class="form_item--label">Message</label>
+              <textarea
+                type="text"
+                class="input"
+                name="message"
+                id="message"
+                required
+              ></textarea>
+            </div>
+            <button id="contact-submit" class="form-submit">
+              Send it my way
+            </button>
+          </form>
+          <div class="modal_overlay modal_overlay-loading">
+            <i class="fas fa-spinner"></i>
+          </div>
+          <div class="modal_overlay modal_overlay-success">
+            Thanks for the message! Looking forward to talk to You soon.
+          </div>
+        </div>
+      </div>
+
+      <img src="./assets/circle.svg" class="shape shape--0" />
+      <img src="./assets/circle.svg" class="shape shape--1" />
+      <img src="./assets/squiggly.svg" class="shape shape--2" />
+      <img src="./assets/circle.svg" class="shape shape--3" />
+      <img src="./assets/triangle.svg" class="shape shape--4" />
+      <img src="./assets/circle.svg" class="shape shape--5" />
+      <img src="./assets/squiggly.svg" class="shape shape--6" />
+      <img src="./assets/circle.svg" class="shape shape--7" />
+      <img src="./assets/semi circle.svg" class="shape shape--8" />
+    </section>
+
+      <!-- PROJECT SECTION STARTED -->
+      
+    <div class="hidden project-section">
+      <section id="projects">
+        <div class="container">
+          <div class="row">
+            <h1 class="section__title">
+              Here are some of my <span class="orange">Projects</span>
+            </h1>
+            <ul class="project__list">
+              <li class="project">
+                <div class="project__wrapper">
+                  <img src="./assets/discordClone.png" class="project__img" alt="">
+                  <div class="project__wrapper--bg"></div>
+                  <div class="project__description">
+                    <div class="project-skills-container">
+                      <img
+                        class="project-skill"
+                        src="./images/stack/HTML.png"
+                        alt=""
+                      />
+                      <img
+                        class="project-skill"
+                        src="./images/stack/CSS.png"
+                        alt=""
+                      />
+                      <img
+                        class="project-skill"
+                        src="./images/stack/Javascript.svg"
+                        alt=""
+                      />
+                      <!-- <img
+                        class="project-skill"
+                        src="./images/stack/Express.png"
+                        alt=""
+                      /> -->
+                      <!-- <img
+                        class="project-skill"
+                        src="./images/stack/NextJsCircle.png"
+                        alt=""
+                      /> -->
+                      <img
+                        class="project-skill"
+                        src="./images/stack/Tailwind.png"
+                        alt=""
+                      />
+                      <img
+                        class="project-skill"
+                        src="./images/stack/NodeJs.svg"
+                        alt=""
+                      />
+          
+                    </div>
+                    <h3 class="project__description--title">
+                      Discord Clone 
+                    </h3>
+                    <h4 class="project__description--sub-title">
+                      Html, CSS, JavaScript, React 
+                    </h4>
+                    <p class="project__description--para">
+                      This landing page was created for Discord, Your Place to Talk and Hang Out . The page was built using HTML, Tailwind CSS, Vite, and Node.
+                    </p>
+                    <div class="project__description--links">
+                      <a href="https://github.com/Imgaurav30/discordCLone" target="_blank" target="_blank"
+                        class="project__description--link">
+                        <i class="fab fa-github"></i>
+                      </a>
+                      <a href="https://discordclonedeploy.netlify.app/" class="project__description--link"> 
+                        <i class="fas fa-link"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li class="project">
+                <div class="project__wrapper">
+                  <img src="./assets/Tic-Tac-Toe.png" class="project__img" alt="">
+                  <div class="project__wrapper--bg"></div>
+                  <div class="project__description">
+                    <div class="project-skills-container">
+                      <img
+                        class="project-skill"
+                        src="./images/stack/HTML.png"
+                        alt=""
+                      />
+                      <img
+                        class="project-skill"
+                        src="./images/stack/CSS.png"
+                        alt=""
+                      />
+                      <img
+                        class="project-skill"
+                        src="./images/stack/Javascript.svg"
+                        alt=""
+                      />
+                      <img
+                        class="project-skill"
+                        src="./images/stack/Express.png"
+                        alt=""
+                      />
+                      <img
+                        class="project-skill"
+                        src="./images/stack/NextJsCircle.png"
+                        alt=""
+                      />
+                      <img
+                        class="project-skill"
+                        src="./images/stack/Tailwind.png"
+                        alt=""
+                      />
+                      <img
+                        class="project-skill"
+                        src="./images/stack/NodeJs.svg"
+                        alt=""
+                      />
+                      <img
+                        class="project-skill"
+                        src="./images/stack/MongoDB.svg"
+                        alt=""
+                      />
+                      <img
+                        class="project-skill"
+                        src="./images/stack/Redux.svg"
+                        alt=""
+                      />
+                      <img
+                        class="project-skill"
+                        src="./images/stack/Vercel.svg"
+                        alt=""
+                      />
+                    </div>
+                    <h3 class="project__description--title">
+                      Tic-Tac-Toe <!-- name of project in image-->
+                    </h3>
+                    <h4 class="project__description--sub-title">
+                      Html, CSS, JavaScript <!-- text inside image -->
+                    </h4>
+                    <p class="project__description--para">
+                      Tic Tac Toe is a popular two-player game that can be implemented using JavaScript. The game is played on a 3x3 grid, and the goal is to place three of your symbols (either "X" or "O") in a row, either horizontally, vertically, or diagonally. <!-- paragraph inside image -->
+                    </p>
+                    <div class="project__description--links">
+                      <a href="https://github.com/Imgaurav30/TIc-Tac-Toe" target="_blank"
+                        class="project__description--link">
+                        <i class="fab fa-github"></i>
+                      </a>
+                      <a href="https://x-o-tic-tac-toe-game.netlify.app/" class="project__description--link"> 
+                        <i class="fas fa-link"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              
+              <li class="project">
+                <div class="project__wrapper">
+                  <img src="./assets/portfolio.png" class="project__img" alt="">
+                  <div class="project__wrapper--bg"></div>
+                  <div class="project__description">
+                    <div class="project-skills-container">
+                      <img
+                        class="project-skill"
+                        src="./images/stack/HTML.png"
+                        alt=""
+                      />
+                      <img
+                        class="project-skill"
+                        src="./images/stack/CSS.png"
+                        alt=""
+                      />
+                      <img
+                        class="project-skill"
+                        src="./images/stack/Javascript.svg"
+                        alt=""
+                      />
+                      <img
+                        class="project-skill"
+                        src="./images/stack/Express.png"
+                        alt=""
+                      />
+                      <img
+                        class="project-skill"
+                        src="./images/stack/NextJsCircle.png"
+                        alt=""
+                      />
+                      <img
+                        class="project-skill"
+                        src="./images/stack/Tailwind.png"
+                        alt=""
+                      />
+                      <img
+                        class="project-skill"
+                        src="./images/stack/NodeJs.svg"
+                        alt=""
+                      />
+                      <img
+                        class="project-skill"
+                        src="./images/stack/MongoDB.svg"
+                        alt=""
+                      />
+                      <img
+                        class="project-skill"
+                        src="./images/stack/Redux.svg"
+                        alt=""
+                      />
+                      <img
+                        class="project-skill"
+                        src="./images/stack/Vercel.svg"
+                        alt=""
+                      />
+                    </div>
+                    <h3 class="project__description--title">
+                      Personal Portfolio
+                    </h3>
+                    <h4 class="project__description--sub-title">
+                      Html, CSS, JavaScript
+                    </h4>
+                    <p class="project__description--para">
+                      This is my Portfolio Website  created for updating my projects. The page was built using HTML, CSS Tailwind CSS, Vite, and Node.
+                    </p>
+                    <div class="project__description--links">
+                      <a href="https://github.com/santbhambra1999/Resturant" target="_blank"
+                        class="project__description--link">
+                        <i class="fab fa-github"></i>
+                      </a>
+                      <a href="https://resturant-blond.vercel.app/" class="project__description--link"> <!-- link to my website, needs to be changed -->
+                        <i class="fas fa-link"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              
+              <li class="project">
+                <div class="project__wrapper">
+                  <img src="./assets/ToDo-app.png" class="project__img" alt="">
+                  <div class="project__wrapper--bg"></div>
+                  <div class="project__description">
+                    <div class="project-skills-container">
+                      <img
+                        class="project-skill"
+                        src="./images/stack/HTML.png"
+                        alt=""
+                      />
+                      <img
+                        class="project-skill"
+                        src="./images/stack/CSS.png"
+                        alt=""
+                      />
+                      <img
+                        class="project-skill"
+                        src="./images/stack/Javascript.svg"
+                        alt=""
+                      />
+                      <img
+                        class="project-skill"
+                        src="./images/stack/React.png"
+                        alt=""
+                      />
+                      <img
+                        class="project-skill"
+                        src="./images/stack/Tailwind.png"
+                        alt=""
+                      />
+                      <img
+                        class="project-skill"
+                        src="./images/stack/NodeJs.svg"
+                        alt=""
+                      />
+                      <img
+                        class="project-skill"
+                        src="./images/stack/Git.svg"
+                        alt=""
+                      />
+                    </div>
+                    <h3 class="project__description--title">
+                      ToDo App-React.js 
+                    </h3>
+                    <h4 class="project__description--sub-title">
+                      Html, CSS, Javascript, React.js
+                    </h4>
+                    <p class="project__description--para">
+                      To-Do List project is an application specially built to keep track of tasks that need to be done. This application will be like a task keeper where the user would be able to enter the tasks that they need to do.
+                      React Todo List using React.js with functionality local storage.
+                    </p>
+                    
+                    <div class="project__description--links">
+                      
+                      
+                      <a href="https://github.com/Imgaurav30/ToDo-React-App" target="_blank"
+                        class="project__description--link">
+                        <i class="fab fa-github"></i>
+                      </a>
+                      
+                      <a href="https://todo-app-using-react-js.netlify.app/" target="_blank" class="project__description--link">
+                        <i class="fas fa-link"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        
+      </section>
+      <div id="skills" class="container skills-container">
+        <div class="skill-container-left">
+          <h2 class="skill-heading">
+            <span class="caps">M</span>e and
+            <br />
+            MyTech Stack
+          </h2>
+
+          <div class="skill-subHeading">
+            <p>
+              Hi, I am Gaurav Gupta. I'm a front-end developer. I love to create simple yet beautiful websites with great user experience and best performance..
+              <br />
+              I have been working on programming and development skills. Some
+              skills are : HTML, CSS, JavaScript, Bootstrap, Tailwind and
+              React.
+              <br />
+              I'm interested in the whole frontend stack, like trying new things and building great projects. I'm in the journey point where i search for a job where i can put my skills in value.
+            </p>
+            <p>
+              I believe that everything Art when you put your consciousness in it. You can connect with me via social links.
+            </p>
+            <p>
+              Feel free to contact me as below: <br />
+              Email id: <a href="mailto: gauravgupta2240@gmail.com"
+              >gauravgupta2240@gmail.com</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="skill-container-right">
+
+          <img src="./images/stack/HTML.png" alt="" class="skills-logo" />
+          <img src="./images/stack/CSS.png" alt="" class="skills-logo" />
+          <img
+            src="./images/stack/Javascript.svg"
+            alt=""
+            class="skills-logo"
+          />
+          <img src="./images/stack/React.png" alt="" class="skills-logo" />
+          <img src="./images/stack/NodeJs.svg" alt="" class="skills-logo" />
+          <img src="./images/stack/NextJsCircle.png" alt="" class="skills-logo" />
+          <img src="./images/stack/Redux.svg" alt="" class="skills-logo" />
+          <img src="./images/stack/Tailwind.png" alt="" class="skills-logo" />
+          <img
+            src="./images/stack/Bootstrap.svg"
+            alt=""
+            class="skills-logo"
+          />
+          <img
+            src="./images/stack/MaterialUI.svg"
+            alt=""
+            class="skills-logo"
+          />
+          <img src="./images/stack/Express.png" alt="" class="skills-logo" />
+          <img src="./images/stack/Git.svg" alt="" class="skills-logo" />
+          <img src="./images/stack/Github.svg" alt="" class="skills-logo" />
+          <img src="./images/stack/Graphql.svg" alt="" class="skills-logo" />
+          <img src="./images/stack/MongoDB.svg" alt="" class="skills-logo" />
+          <img src="./images/stack/Vercel.svg" alt="" class="skills-logo" />
+        </div>
+      </div>
+
+      <footer>
+        <div class="container">
+          <div class="row footer__row">
+            <a href="/" class="footer__anchor">
+              <figure class="footer__logo">
+                <img src="./images/logotelegram-removebg-preview.png" class="footer__logo--img" alt="">
+              </figure>
+              <span class="footer__logo--popper">
+                Top
+                <i class="fas fa-arrow-up"></i>
+              </span>
+            </a>
+            <div class="footer__social--list">
+              <a href="https://github.com/Imgaurav30" class="
+              footer__social--link
+              link__hover-effect
+              link__hover-effect--white
+            ">
+                GitHub
+              </a>
+              <a href="https://www.linkedin.com/in/gaurav30/" target="_blank" class="
+              footer__social--link
+              link__hover-effect
+              link__hover-effect--white
+            ">
+                LinkedIn
+              </a>
+              <a href="#" onclick="toggleModal()" class="
+              footer__social--link
+              link__hover-effect
+              link__hover-effect--white
+            ">
+                Contact
+              </a>
+              
+              <a href="./assets/Resume.pdf" target="_blank" class="
+              footer__social--link
+              link__hover-effect
+              link__hover-effect--white
+              
+            ">
+                Resume
+              </a>
+              
+            </div>
+            <div class="footer__copyright">Copyright &copy; 2023 Gaurav Gupta</div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+    
+      
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    
+</body>
+</html>
