@@ -793,6 +793,11 @@ footer {
 .skills-logo{
   width:60px;
 }
+.scroll__icon{
+  position: absolute;
+  bottom: 20px;
+  left: -10px;
+}
 }
 
 /* Small phones */
