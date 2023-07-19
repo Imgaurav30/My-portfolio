@@ -795,7 +795,7 @@ footer {
 }
 .scroll__icon{
   position: absolute;
-  bottom: 20px;
+  bottom: 24px;
   left: -10px;
 }
 }
@@ -805,7 +805,11 @@ footer {
   .scroll{
     bottom: 30px;
   }
-  
+  .scroll__icon{
+    position: absolute;
+    bottom: 24px;
+    left: -10px;
+  }
   .title {
     font-size: 52px;
   }
